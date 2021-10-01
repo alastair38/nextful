@@ -2,6 +2,7 @@ import { createClient } from 'contentful';
 import Head from 'next/head';
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Skeleton from '../../components/Skeleton';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -18,7 +19,7 @@ export async function getStaticPaths() {
   });
   return {
     paths: paths, // const paths returns an array of objects which can be used as the paths object returned from the function
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -38,6 +39,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PublicationDetails({ publication }) {
+  if (!publication) return <Skeleton />;
   // destructure the publication prop as it is passed to the PublicationDetails function
   console.log(publication);
   const { featuredImage, title, excerpt, description } = publication.fields;
@@ -48,9 +50,9 @@ export default function PublicationDetails({ publication }) {
         <meta name="description" content={excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="grid grid-cols-2 items-center bg-gray-100">
+      <header className="grid md:grid-cols-2 items-center bg-gray-100">
         <h2 className="text-4xl font-bold p-4">{publication.fields.title}</h2>
-        <div className="featured relative h-80 w-full overflow-hidden">
+        <div className="featured relative h-44 md:h-80 w-full overflow-hidden">
           <Image
             src={`https:${featuredImage.fields.file.url}`}
             width={featuredImage.fields.file.details.image.width}

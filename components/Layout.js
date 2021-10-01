@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Layout({ children }) {
   return (
-    <div className="p-16 w-full flex flex-col h-screen content-center justify-between">
+    <div className="p-8 md:p-16 w-full flex flex-col h-screen content-center justify-between">
       <header>
         <Link href="/">
           <a className="flex flex-col justify-center items-center">

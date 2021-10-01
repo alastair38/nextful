@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
 export default function Publications({ publications }) {
   return (
-    <div className="recipe-list grid grid-cols-2 gap-6 w-4/5 mx-auto">
+    <div className="recipe-list grid md:grid-cols-2 gap-6 md:w-4/5 mx-auto mb-10">
       <Head>
         <title>NextFul App</title>
         <meta name="description" content="Welcome to the NextFul App" />
