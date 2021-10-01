@@ -14,6 +14,7 @@ export async function getStaticProps() {
     props: {
       publications: res.items,
     },
+    revalidate: 10,
   };
 }
 

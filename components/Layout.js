@@ -6,17 +6,22 @@ export default function Layout({ children }) {
       <header>
         <Link href="/">
           <a className="flex flex-col justify-center items-center">
-            <h1 className="text-5xl font-bold">NextFul</h1>
+            <h1 className="text-5xl ">
+              <span className="text-purple-900 font-black">Next</span>Ful
+            </h1>
           </a>
         </Link>
       </header>
 
-      <div className="container py-16 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <div className="container pt-16 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         {children}
       </div>
 
-      <footer className="flex items-center justify-center">
-        <p>Copyright 2021 NextFul</p>
+      <footer className="flex items-center p-4 justify-center">
+        <p>
+          Copyright 2021{' '}
+          <span className="text-purple-900 font-black">Next</span>Ful
+        </p>
       </footer>
     </div>
   );

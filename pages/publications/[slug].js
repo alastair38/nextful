@@ -33,6 +33,7 @@ export async function getStaticProps({ params }) {
     props: {
       publication: items[0], // get the first element from the items array and set it to the publication prop
     },
+    revalidate: 10,
   };
 }
 
