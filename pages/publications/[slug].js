@@ -51,7 +51,7 @@ export default function PublicationDetails({ publication }) {
         <h2 className="text-4xl font-bold p-4">{publication.fields.title}</h2>
         <div className="featured relative h-80 w-full overflow-hidden">
           <Image
-            src={`https://${featuredImage.fields.file.url}`}
+            src={`https:${featuredImage.fields.file.url}`}
             width={featuredImage.fields.file.details.image.width}
             objectFit="cover"
             height={featuredImage.fields.file.details.image.height}
