@@ -8,7 +8,7 @@ export default function PublicationsCard({ publication }) {
     <div className="overflow-hidden ring-4 ring-gray-200 rounded">
       <div className="featured object-fit h-60 overflow-hidden">
         <Image
-          src={`https://${featuredImage.fields.file.url}`}
+          src={`https:${featuredImage.fields.file.url}`}
           width={featuredImage.fields.file.details.image.width}
           height={featuredImage.fields.file.details.image.height}
           alt={featuredImage.fields.description}
