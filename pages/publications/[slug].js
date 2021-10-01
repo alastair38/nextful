@@ -30,6 +30,15 @@ export async function getStaticProps({ params }) {
     content_type: 'publication',
     'fields.slug': params.slug, // only get the entry with the field.slug property matches the current params.slug
   });
+
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
   return {
     props: {
       publication: items[0], // get the first element from the items array and set it to the publication prop
