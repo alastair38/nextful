@@ -50,7 +50,7 @@ export async function getStaticProps({ params }) {
 export default function PublicationDetails({ publication }) {
   if (!publication) return <Skeleton />;
   // destructure the publication prop as it is passed to the PublicationDetails function
-  console.log(publication);
+  // console.log(publication);
   const { featuredImage, title, excerpt, description } = publication.fields;
   return (
     <div>
@@ -59,7 +59,7 @@ export default function PublicationDetails({ publication }) {
         <meta name="description" content={excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="grid md:grid-cols-2 items-center bg-gray-100">
+      <header className="grid md:grid-cols-2 items-center bg-gray-100 rounded overflow-hidden">
         <h2 className="text-4xl font-bold p-4">{publication.fields.title}</h2>
         <div className="featured relative h-44 md:h-80 w-full overflow-hidden">
           <Image
@@ -74,6 +74,7 @@ export default function PublicationDetails({ publication }) {
       <div className="mx-auto py-16 prose">
         {documentToReactComponents(description)}
       </div>
+      <hr className="mb-12" />
     </div>
   );
 }

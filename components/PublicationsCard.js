@@ -5,7 +5,7 @@ export default function PublicationsCard({ publication }) {
   const { title, slug, featuredImage, excerpt } = publication.fields;
 
   return (
-    <div className="overflow-hidden ring-4 ring-gray-200 rounded">
+    <div className="overflow-hidden shadow-lg bg-gray-100 rounded">
       <div className="featured object-fit md:h-60 overflow-hidden">
         <Image
           src={`https:${featuredImage.fields.file.url}`}
@@ -23,7 +23,7 @@ export default function PublicationsCard({ publication }) {
           <Link href={'/publications/' + slug}>
             <a
               aria-label={`Read ${title}`}
-              className="bg-red-200 px-6 py-2 rounded-full shadow-sm inline-flex items-center"
+              className="bg-red-200 ring-4 ring-red-100 hover:bg-red-100 focus:bg-red-100 transition-colors px-6 py-2 rounded-full shadow-sm inline-flex items-center"
             >
               Read article
             </a>
