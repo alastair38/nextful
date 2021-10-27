@@ -23,7 +23,7 @@ export default function PublicationsCard({ publication }) {
           <Link href={'/publications/' + slug}>
             <a
               aria-label={`Read ${title}`}
-              className="bg-red-200 ring-4 ring-red-100 hover:bg-red-100 focus:bg-red-100 transition-colors px-6 py-2 rounded-full shadow-sm inline-flex items-center"
+              className="ring-green-300 ring-4 hover:ring-green-200 focus:ring-green-200 transition-colors px-4 py-2 rounded-full shadow-sm inline-flex items-center"
             >
               Read article
             </a>

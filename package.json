@@ -6,7 +6,8 @@
     "dev": "next dev",
     "css": "tailwindcss -i ./styles/styles.css -o ./styles/global.css -w",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.4.0",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.3.6",
+    "next-sitemap": "^1.6.179",
     "postcss": "^8.3.8",
     "tailwindcss": "^2.2.16"
   }
